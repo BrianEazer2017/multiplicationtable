@@ -36,16 +36,19 @@ public class MultipilcationTable {
 		
 		for (int i = 1; i <= number; i++) {
 			// This right justifies the number
+			
 			System.out.printf("%-5d", i);
+			
+			
 			for (int j = 1; j <= number; j++) {
 				// The if statement checks to see if you need a new line after the specific entry
-				if (j!=number) {
 				System.out.printf("%-5d", i*j);
+				
+				if (j == number) {
+					System.out.printf("\n");
 				}
 				else {
-					System.out.printf("%-5d", i*j);
-					// This creates a new line because you're going to a new iteration of the outer loop
-					System.out.printf("\n");
+					continue;
 				}
 			}
 		}
