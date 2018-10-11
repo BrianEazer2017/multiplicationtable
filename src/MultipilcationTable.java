@@ -22,12 +22,12 @@ public class MultipilcationTable {
 	private static void displayMultiplcationTable(int number) {
 		// TODO Auto-generated method stub
 		int counter = 1;
-		System.out.print(" ");
+		System.out.print("     ");
 		while (counter <= number) {
 			// Assumption: The user will not input a number with more than 4 digits. If the user were to input a number with more 
 			// digits I'd have to change the printf specification.
 			// printf changes the amount of space based off the number of digits and left justifies the number.
-			System.out.printf("%5d", counter);
+			System.out.printf("%-5d", counter);
 			counter++;
 		}
 		System.out.println("");
