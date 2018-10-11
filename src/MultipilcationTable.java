@@ -22,25 +22,32 @@ public class MultipilcationTable {
 	private static void displayMultiplcationTable(int number) {
 		// TODO Auto-generated method stub
 		int counter = 1;
+		System.out.print(" ");
 		while (counter <= number) {
-			System.out.print("     " + counter + "   ");
+			// Assumption: The user will not input a number with more than 4 digits. If the user were to input a number with more 
+			// digits I'd have to change the printf specification.
+			// printf changes the amount of space based off the number of digits and left justifies the number.
+			System.out.printf("%5d", counter);
 			counter++;
 		}
 		System.out.println("");
 		
-		//The problem with this multiplication table is that when you get to double digits, you should reduce the spaces
+		
 		
 		for (int i = 1; i <= number; i++) {
-			System.out.print(i);
+			// This right justifies the number
+			System.out.printf("%-5d", i);
 			for (int j = 1; j <= number; j++) {
-			if (j!=number) {
-			System.out.print("    " + (i*j) + "    ");
-			} else {
-				System.out.println("    " + (i*j) + "    ");
+				// The if statement checks to see if you need a new line after the specific entry
+				if (j!=number) {
+				System.out.printf("%-5d", i*j);
+				}
+				else {
+					System.out.printf("%-5d", i*j);
+					// This creates a new line because you're going to a new iteration of the outer loop
+					System.out.printf("\n");
+				}
 			}
-		}	
-		
 		}
 	}
-
 }
